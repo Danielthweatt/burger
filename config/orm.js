@@ -8,17 +8,9 @@ function questionMarkify(values){
     }).toString();
 };
 
-function sqlify(newColumnValues){
-    const sqlified = {};
-    newColumnValues.forEach(function(element){
-        
-    });
-    return sqlified;
-};
-
 // ORM
 const orm = {
-    selectAll: function(table, cd){
+    selectAll: function(table, cb){
         connection.query(`SELECT * FROM ${table}`, function(error, result){
             if (error) {
                 console.log(`Oh boy, it broke: ${error}`);
@@ -38,9 +30,9 @@ const orm = {
             }
         });
     },
-    updateOne: function(table, newColumnValues, condition, cd){
+    updateOne: function(table, newColumnValues, condition, cb){
         connection.query(`UPDATE ${table} SET ? WHERE ?`, 
-        sqlify(newColumnValues).push(condition), 
+        [newColumnValues, condition], 
         function(error, result){
             if (error) {
                 console.log(`Oh boy, it broke: ${error}`);
