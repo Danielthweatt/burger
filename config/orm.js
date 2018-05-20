@@ -8,6 +8,14 @@ function questionMarkify(values){
     }).toString();
 };
 
+function sqlify(newColumnValues){
+    const sqlified = {};
+    newColumnValues.forEach(function(element){
+        
+    });
+    return sqlified;
+};
+
 // ORM
 const orm = {
     selectAll: function(table, cd){
@@ -21,6 +29,7 @@ const orm = {
     },
     insertOne: function(table, columns, values, cb){
         connection.query(`INSERT INTO ${table} (${columns.toString()}) VALUES (${questionMarkify(values)})`, 
+        values, 
         function(error, result){
             if (error) {
                 console.log(`Oh boy, it broke: ${error}`);
@@ -29,7 +38,17 @@ const orm = {
             }
         });
     },
-    updateOne: function(){}
+    updateOne: function(table, newColumnValues, condition, cd){
+        connection.query(`UPDATE ${table} SET ? WHERE ?`, 
+        sqlify(newColumnValues).push(condition), 
+        function(error, result){
+            if (error) {
+                console.log(`Oh boy, it broke: ${error}`);
+            } else {
+                cb(result);
+            }
+        });
+    }
 };
 
 // Export
