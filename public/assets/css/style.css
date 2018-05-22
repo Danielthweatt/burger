@@ -1,0 +1,16 @@
+header {
+    margin: 20px 0;
+}
+
+#img{
+    max-width: 25%;
+    margin: auto;
+}
+
+button {
+    float: right;
+}
+
+h5 {
+    margin-top: 10px;
+}
