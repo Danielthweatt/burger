@@ -2,7 +2,7 @@ header {
     margin: 20px 0;
 }
 
-#img{
+#img {
     max-width: 25%;
     margin: auto;
 }
@@ -11,6 +11,14 @@ button {
     float: right;
 }
 
-h5 {
+#enter {
     margin-top: 10px;
+}
+
+@media screen and (max-width: 640px) {
+
+    #img {
+        max-width: 40%;
+    }
+
 }

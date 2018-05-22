@@ -8,6 +8,7 @@
 <div class="row">
     <div class="col-md-1 col-lg-2"></div>
     <div class="col-6 col-md-5 col-lg-4">
+        <h5 class="text-center">Undevoured Burgers:</h5>
         <ul class="list-group">
             {{#each burgers}}
                 {{#unless devoured}}
@@ -22,6 +23,7 @@
         </ul>
     </div>
     <div class="col-6 col-md-5 col-lg-4">
+        <h5 class="text-center">Devoured Burgers:</h5>
         <ul class="list-group">
             {{#each burgers}}
                 {{#if devoured}}
@@ -33,7 +35,7 @@
         </ul>
     </div>
 </div>
-<h5 class="text-center">Enter a new burger:</h5>
+<h5 class="text-center" id="enter">Enter a new burger:</h5>
 <div class="row">
     <div class="col-1 col-sm-2 col-md-3 col-lg-4"></div>
     <div class="col-10 col-sm-8 col-md-6 col-lg-4">
