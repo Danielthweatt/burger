@@ -16,7 +16,6 @@
   "bugs": {
     "url": "https://github.com/Danielthweatt/burger/issues"
   },
-  "homepage": "https://github.com/Danielthweatt/burger#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
